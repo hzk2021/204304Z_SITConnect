@@ -13,7 +13,7 @@ namespace _204304Z_SITConnect.Forms
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string verifyEmailAddr = Request.QueryString["email"];
+            string verifyEmailAddr = HttpUtility.HtmlEncode(Request.QueryString["email"]).ToString();
             Account verifyAccount = new Account(verifyEmailAddr, "");
 
             if (verifyAccount.EmailIsInDataBase() && Helpers.Helper.VerifyEmail(verifyEmailAddr))
