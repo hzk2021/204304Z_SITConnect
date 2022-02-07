@@ -31,7 +31,7 @@ namespace _204304Z_SITConnect.Forms
                     if (existingAccount.IsLocked())
                     {
                         TimeSpan timeElapsed = DateTime.Now - existingAccount.GetLockOutDateTime();
-                        if (timeElapsed.TotalSeconds > 10) // Duration = 10 seconds rn
+                        if (timeElapsed.TotalMinutes > 30) // Duration = 30 minutes rn
                         {
                             existingAccount.UnlockAccount();
                         }

@@ -81,6 +81,7 @@
     <Content Include="Forms\Login.aspx" />
     <Content Include="Forms\Registration.aspx" />
     <Content Include="Forms\VerifyEmail.aspx" />
+    <Content Include="GAcc.txt" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

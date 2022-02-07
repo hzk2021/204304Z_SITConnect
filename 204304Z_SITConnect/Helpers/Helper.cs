@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
+using System.Reflection;
 using System.Text;
 using System.Web;
 using System.Web.UI.WebControls;
@@ -92,7 +94,12 @@ namespace _204304Z_SITConnect.Helpers
             {
                 client.EnableSsl = true;
                 client.UseDefaultCredentials = false;
-                client.Credentials = new NetworkCredential("CarlsJrY2S1@gmail.com", "C@rlPass"); // Previous project Google SMTP credentials
+
+                string projectPath = HttpRuntime.AppDomainAppPath;
+                string googleCredentialsFile = projectPath + @"GAcc.txt";
+                string[] googleCredentials = File.ReadAllLines(googleCredentialsFile);
+
+                client.Credentials = new NetworkCredential(googleCredentials[0], googleCredentials[1]); // Previous project Google SMTP credentials
                 client.Host = "smtp.gmail.com";
                 client.Port = 587;
                 client.DeliveryMethod = SmtpDeliveryMethod.Network;
