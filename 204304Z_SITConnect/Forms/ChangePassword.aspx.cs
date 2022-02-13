@@ -85,8 +85,8 @@ namespace _204304Z_SITConnect.Forms
             finally { 
                 connection.Close();
 
-                var oldPass = txt_OldPassword.Text;
-                var newPass = txt_NewPassword.Text;
+                var oldPass = HttpUtility.HtmlEncode(txt_OldPassword.Text);
+                var newPass = HttpUtility.HtmlEncode(txt_NewPassword.Text);
 
                 if (string.IsNullOrEmpty(oldPass) || string.IsNullOrEmpty(newPass))
                 {
@@ -102,7 +102,7 @@ namespace _204304Z_SITConnect.Forms
                 {
                     TimeSpan timeElapsed = DateTime.Now - PasswordRecord.GetLastChangedPassDateTime(Session["UserEmailLoggedIn"].ToString());
 
-                    if (timeElapsed.TotalMinutes > 30)
+                    if (timeElapsed.TotalMinutes > 10) // currently set to 10 minutes before you can change password again
                     {
                         string newSalt = Helpers.Crypto.GetRandomSalt();
                         string newHashedPW = Helpers.Crypto.GetHashedString(newPass, newSalt);
@@ -139,7 +139,7 @@ namespace _204304Z_SITConnect.Forms
                     else
                     {
                         lbl_Message.ForeColor = Color.Red;
-                        lbl_Message.Text = "You are changing passwords way too fast. Please wait at least 30 minutes!";
+                        lbl_Message.Text = "You are changing passwords way too fast. Please wait at least 10 minutes!";
                     }
                 }
                 else

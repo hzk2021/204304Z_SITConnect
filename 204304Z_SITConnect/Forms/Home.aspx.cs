@@ -27,7 +27,7 @@ namespace _204304Z_SITConnect.Forms
                         TimeSpan timeElapsed = DateTime.Now - PasswordRecord.GetLastChangedPassDateTime(Session["UserEmailLoggedIn"].ToString());
                         if (timeElapsed.TotalMinutes > 30) // Force Password change after x time
                         {
-                            Response.Write("<script>alert('Your password is more than 30 minutes old. Please change it!!')</script>");
+                            Response.Redirect("ChangePassword.aspx", false);
                         }
                     }
                 }

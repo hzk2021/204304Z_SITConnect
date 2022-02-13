@@ -17,6 +17,17 @@ namespace _204304Z_SITConnect.Helpers
 
             return Convert.ToBase64String(saltByte);
         }
+
+        public static string GetHashedString(string text, string salt)
+        {
+            SHA512Managed sha512Hash = new SHA512Managed();
+            string clearTextWithSalt = text + salt;
+
+            byte[] hashTextandSalt = sha512Hash.ComputeHash(Encoding.UTF8.GetBytes(clearTextWithSalt));
+            return Convert.ToBase64String(hashTextandSalt);
+
+        }
+
         public static Tuple<byte[], byte[]> GetRandomIVAndKey()
         {
             byte[] IV;
@@ -29,15 +40,7 @@ namespace _204304Z_SITConnect.Helpers
 
             return Tuple.Create(IV, Key);
         }
-        public static string GetHashedString(string text, string salt)
-        {
-            SHA512Managed sha512Hash = new SHA512Managed();
-            string clearTextWithSalt = text + salt;
 
-            byte[] hashTextandSalt = sha512Hash.ComputeHash(Encoding.UTF8.GetBytes(clearTextWithSalt));
-            return Convert.ToBase64String(hashTextandSalt);
-
-        }
         public static string GetEncryptedText(string clear_text, byte[] IV, byte[] Key)
         {
             string cipherText;
