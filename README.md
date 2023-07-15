@@ -1,48 +1,32 @@
-# 204304Z_SITConnect
+<div align=center>
+	<h1>SITConnect
+	<br>
+		<img src="https://img.shields.io/static/v1?label=&message=ASP .NET&color=512BD4&style=for-the-badge&logo=dotnet&logoColor=white&logoWidth=&labelColor=&link=">
+		<img src="https://img.shields.io/static/v1?label=&message=reCAPTCHA&color=4285F4&style=for-the-badge&logo=google&logoColor=white&logoWidth=&labelColor=&link=">
+		<img src="https://img.shields.io/static/v1?label=&message=CSharp&color=239120&style=for-the-badge&logo=tailwindcss&logoColor=white&logoWidth=&labelColor=&link=">
+		<img src="https://img.shields.io/static/v1?label=&message=MySQL&color=4479A1&style=for-the-badge&logo=mysql&logoColor=black&logoWidth=&labelColor=&link=">
+		<br>
+	</h1>
+</div>
 
-Practical Assignment (ICA 30%)
+## Description
 
-Completed Features Checklist:
+Automatically triggers that identifies threats and implements mitigation methods for common vulnerabilities, specifically those in the OWASP Top 10 & MITRE. Technologies employed include reCAPTCHA, Regex, SQL and Cryptography
 
-1. Registration Form ✓
-   - Strong password
-   - Front & Backend Regex check
-   - Password Strength feedback
-   - Securing user data & passwords
-     - Credit card information encryption
-     - Password hashing with salt
+## Built Using
 
-2. Session ✓
-   - Secure session (fixed session fixation issues)
-   - Session timeout
-   - Route to login page after session timeout
+- ASP .NET <img height="16" width="16" src="https://cdn.simpleicons.org/dotnet" />
+- reCAPTCHA <img height="16" width="16" src="https://cdn.simpleicons.org/google" />
+- CSharp <img height="16" width="16" src="https://cdn.simpleicons.org/csharp" />
+- MySQL <img height="16" width="16" src="https://cdn.simpleicons.org/MySQL" />
 
-3. Login/Logout ✓
-   - Able to login after registration
-   - Account lockout after 3 failed login attempts
-   - Clean logout
-   - Perform audit log
 
-4. Anti-bot ✓
-   - Google reCaptcha v3 service
+## Preview
 
-5. Proper Input Validation ✓
-   - Prevent SQLi and XSS by using Regex filtering and Encoding
-   - Email verification
-   - Client & server side validation
+#### Desktop
 
-6. Proper Error handling ✓
-   - Fail gracefully (404, 403, 400 error pages etc)
+![Desktop](./readme-assets/SITConnect.png)
 
-7. Software Testing - Source code analysis ✓
-   - Github vulnerablities check
+#### Mobile
 
-8. Advanced Features
-    - Automatic account recovery after x mins of lockout ✓
-    - Avoid password reuse ✓
-    - Change password ✓
-    - Minimum & maximum password age ✓
-
-9. Demo (done) ✓
-10. Report (done) ✓
-   
+![Desktop](./readme-assets/SITConnect-mobile.png)
