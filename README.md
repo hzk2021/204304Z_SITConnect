@@ -11,7 +11,7 @@
 
 ## Description
 
-Automatically triggers that identifies threats and implements mitigation methods for common vulnerabilities, specifically those in the OWASP Top 10 & MITRE. Technologies employed include reCAPTCHA, Regex, SQL and Cryptography
+ Triggers that automatically identify threats and implements mitigation methods for common vulnerabilities, specifically those in the OWASP Top 10 & MITRE. Technologies employed include reCAPTCHA, Regex, SQL and Cryptography
 
 ## Built Using
 
